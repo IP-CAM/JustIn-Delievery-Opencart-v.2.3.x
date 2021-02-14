@@ -1,57 +1,57 @@
-# Інструкція до модулю доставки JustIn
+# Instructions for the JustIn delivery module
 
-Файли модуля встановлюються будь-яким стандартним способом встановлення модулів в OpenCart.
+Module files are installed in any standard way to install modules in OpenCart.
 
-Після встановлення потрібно оновити модифікатори.
+After installation, you need to update the modifiers.
 
-Версія OpenCart (OcStore) - 2.3.х
-
-
-##### Налаштування модуля
-
-Для переходу в налаштування модуля, необхідно:
-1.	Перейти в адміністративну панель магазину
-2.	Вибрати меню «Модулі / Розширення»
-3.	Вибрати підменю «Модулі / Розширення»
-4.	Вибрати тип розширення «Доставка»
-5.	Встановити модуль «JustIn» та перейти в редагування
-
-##### Пункти налаштування
-1.	У вкладці «Основні налаштування» необхідно ввести Логін та Пароль до API JustIn.
-2.	Вибрати мову отримання інформації по API.
-3.	Тестовий режим потрібен для тестування модуля та ознайомлення з функціоналом.
-4.	Обов’язково змінити статус модуля на «Ввімкнено» («Включено»)
-5.	У вкладці «Вартість» потрібно встановити налаштування відповідно до потреб магазину для розрахунку вартості доставки та відображення покупцям
--	Фіксована вартість – якщо налаштування «Фіксована вартість для всіх замовлень» ввімкнено, тоді сума із поля «Фіксована вартість» буде використана як вартість за доставку в замовленні. При цьому тарифікація доставки не має значення.
--	Безкоштовна доставка – якщо сума товарів в замовленні буде більша вказаної суми в полі «Безкоштовна доставка від», тоді доставка буде вважатися безкоштовною
-ВАЖЛИВО! Безкоштовна доставка діє навіть при ввімкненні фіксованої вартості. Щоб прибрати безкоштовну доставку достатньо залишити поле пустим, або ж вказати нуль «0»
--	Тариф доставки в залежності від ваги товарів в замовленні – використовується при розрахунку вартості доставки в залежності від ваги товарів в замовленні
-УВАГА! На момент розробки модуля, компанія JustIn працює з доставкою до 30 кг. Якщо сумарна вага товарів в замовленні буде перевищувати максимальну допустиму вагу – модуль доставки буде не доступним.
-6.	У вкладці «Додаткові» є можливість вибору додаткових налаштувань роботи модуля:
--	«Користувач може вибрати відділення в будь-якому місті» - якщо налаштування вимкнене, тоді в момент оформлення замовлення користувачу дається на вибір тільки відділення, які знаходяться в вказаному ним місті. Якщо ж налаштування ввімкнено – користувач має можливість вибору із всіх відділень компанії JustIn.
-ВАЖЛИВО! Якщо користувачем було введено не коректну назву міста, або в даному місті немає відділень для доставки – вибір відділення також буде відбуватися із всіх відділень компанії JustIn.
--	«Режим розрахунку одиниці ваги» - необхідно якщо в магазині використовується одиниця ваги не кілограм. (Приклад: В магазині використовуються грами - вмикаємо Режим розрахунку одиниці ваги, вибираємо грами і в відношенні указуємо 1000)
-7.	Натиснути кнопку збереження налаштувань
-8.	Після збереження налаштувань необхідно знову відкрити налаштування модуля та оновити інформацію про відділення та міста
-
-## Робота із замовленням
-
-Після оформлення замовлення клієнтом, адміністратор магазину має можливість змінити відділення доставки.
-##### Для цього необхідно:
-1.	Перейти в адміністративну панель магазину
-2.	Вибрати меню «Продажі»
-3.	Вибрати підменю «Замовлення»
-4.	Натиснути кнопку «Огляд» на необхідному замовленні
-5.	В розділі «Доставка JustIn» натиснути кнопку «Редагувати»
-6.	Вибрати потрібне відділення
-7.	Натиснути кнопку збереження
+OpenCart version (OcStore) - 2.3.x
 
 
-Адміністратор магазину має можливість відправити запит про доставку із адміністративної панелі.
+##### Module settings
 
-Для цього необхідно натиснути кнопку «Показати форму запиту про доставку», внести всі необхідні дані форми та натиснути «Надіслати запит про доставку».
+To go to the module settings, you need:
+1. Go to the administrative panel of the store
+2. Select the menu "Modules / Extensions"
+3. Select the submenu "Modules / Extensions"
+4. Select the type of extension "Shipping"
+5. Install the "JustIn" module and go to edit
 
-Після вдалого запиту, над кнопкою «Показати форму запиту про доставку» з’явиться кнопка отримання стікеру.
+##### Configuration items
+1. In the "Basic Settings" tab, enter the Login and Password to the JustIn API.
+2. Select the language for obtaining information on the API.
+3. Test mode is required to test the module and get acquainted with the functionality.
+4. Be sure to change the status of the module to "On" ("Enabled")
+5. In the "Cost" tab, you need to set the settings according to the needs of the store to calculate the cost of delivery and display to customers
+- Fixed cost - if the "Fixed cost for all orders" setting is enabled, then the amount from the "Fixed cost" field will be used as the cost for delivery in the order. In this case, the tariff of delivery does not matter.
+- Free delivery - if the amount of goods in the order is greater than the amount specified in the field "Free delivery from", then delivery will be considered free
+IMPORTANTLY! Free shipping is valid even when the fixed cost is enabled. To remove free shipping just leave the field blank, or specify zero "0"
+- Delivery tariff depending on the weight of goods in the order - used when calculating the cost of delivery depending on the weight of goods in the order
+WARNING! At the time of development of the module, the company JustIn works with delivery to 30 kg. If the total weight of the goods in the order will exceed the maximum allowable weight - the delivery module will not be available.
+6. In the "Advanced" tab you can select additional settings for the module:
+- "The user can select a branch in any city" - if the setting is disabled, then at the time of ordering the user is given the choice of only branches that are located in the specified city. If the settings are enabled - the user has the option to choose from all branches of JustIn.
+IMPORTANTLY! If the user has entered an incorrect city name, or there are no branches in the city for delivery - the branch will also be selected from all JustIn branches.
+- "Unit of weight calculation mode" - is necessary if the store uses a unit of weight not a kilogram. (Example: The store uses grams - turn on the mode of calculation of the unit of weight, select grams and specify 1000 in relation)
+7. Click the save settings button
+8. After saving the settings, you need to reopen the module settings and update the information about branches and cities
 
-Примітка. Кнопка «Зберегти форму» зберігає введену інформацію в форму без надсилання запиту про доставку.
+## Working with the order
+
+After placing an order with the customer, the store administrator has the opportunity to change the delivery department.
+##### This requires:
+1. Go to the administrative panel of the store
+2. Select the "Sales" menu
+3. Select the "Order" submenu
+4. Click the "Browse" button on the required order
+5. In the "JustIn Delivery" section, click the "Edit" button
+6. Select the desired branch
+7. Click the save button
+
+
+The store administrator has the ability to send a delivery request from the administration panel.
+
+To do this, click the "Show delivery request form" button, enter all the necessary form data and click "Send delivery request".
+
+After a successful request, a button for receiving a sticker will appear above the "Show delivery request form" button.
+
+Note. The "Save form" button saves the information entered in the form without sending a delivery request. 
 
